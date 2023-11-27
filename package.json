@@ -1,8 +1,26 @@
 {
+  "name": "review-me-design-system",
+  "version": "0.0.1",
+  "description": "review me 디자인 시스템",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "contributors": [
+    {
+      "name": "aken-you",
+      "email": "kinsk2839@naver.com",
+      "url": "https://github.com/aken-you"
+    }
+  ],
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
