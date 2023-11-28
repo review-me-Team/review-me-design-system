@@ -1,10 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES5",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@pages/*": ["./pages/*"],
+      "@components/*": ["./components/*"],
+      "@assets/*": ["./assets/*"],
+      "@styles/*": ["./styles/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@utils": ["./utils/index.ts"],
+      "@utils/*": ["./utils/*"],
+      "@constants": ["./constants/index.ts"],
+      "@constants/*": ["./constants/*"],
+      "@stories/*": ["./stories/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
