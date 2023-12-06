@@ -140,4 +140,7 @@ const color = {
   },
 } as const;
 
-export { font, palette, color };
+const theme = { font, palette, color };
+type ThemeType = typeof theme;
+
+export { theme, ThemeType };
