@@ -10,7 +10,7 @@ interface Props {
 
 const Label = ({ isActive, px = 20, py = 8 }: Props) => {
   return (
-    <LabelLayout isActive={isActive} px={px} py={py}>
+    <LabelLayout $isActive={isActive} $px={px} $py={py}>
       Label
     </LabelLayout>
   );
