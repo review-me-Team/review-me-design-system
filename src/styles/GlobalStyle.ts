@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
   }
   html, body {
     font-family: 'Noto Sans KR', sans-serif;

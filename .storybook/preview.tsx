@@ -2,7 +2,7 @@ import React from 'react';
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 
-import * as theme from '../src/styles/theme';
+import { theme } from '../src/styles/theme';
 import { GlobalStyle } from '../src/styles/GlobalStyle';
 
 const preview: Preview = {
