@@ -11,6 +11,10 @@ export default {
       description: '라벨의 활성화를 나타냅니다.',
       control: 'boolean',
     },
+    children: {
+      description: '라벨에 들어갈 컨텐츠를 표시합니다.',
+      control: 'text',
+    },
     px: {
       description: '라벨의 padding-left, padding-right 값을 지정합니다',
       control: 'number',
@@ -22,6 +26,7 @@ export default {
   },
   args: {
     isActive: false,
+    children: 'Label',
   },
 } satisfies Meta<typeof Label>;
 
@@ -30,5 +35,6 @@ type Story = StoryObj<typeof Label>;
 export const Default: Story = {
   args: {
     isActive: false,
+    children: 'Label',
   },
 };
