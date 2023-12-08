@@ -138,6 +138,11 @@ const color = {
       strong: palette.green700,
     },
   },
+  system: {
+    red: palette.red,
+    blue: palette.blue,
+    navy: palette.navy,
+  },
 } as const;
 
 const theme = { font, palette, color };
