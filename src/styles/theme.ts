@@ -5,18 +5,18 @@ const FONT_WEIGHT = {
   BOLD: 700,
 };
 const FONT_SIZE = {
-  XXL: '32px',
-  XL: '24px',
-  L: '18px',
-  M: '16px',
-  S: '12px',
+  XXL: '2rem',
+  XL: '1.5rem',
+  L: '1.125rem',
+  M: '1rem',
+  S: '.75rem',
 };
 const LINE_HEIGHT = {
-  XXL: '48px',
-  XL: '40px',
-  L: '32px',
-  M: '28px',
-  S: '20px',
+  XXL: '3rem',
+  XL: '2.5rem',
+  L: '2rem',
+  M: '1.75rem',
+  S: '1.25rem',
 };
 
 const font = {

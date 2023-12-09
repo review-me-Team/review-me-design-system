@@ -5,11 +5,11 @@ import { LabelLayout } from './style';
 interface Props {
   isActive: boolean;
   children: ReactNode;
-  px?: number;
-  py?: number;
+  px?: string;
+  py?: string;
 }
 
-const Label = ({ isActive, children, px = 20, py = 8 }: Props) => {
+const Label = ({ isActive, children, px = '1.25rem', py = '0.5rem' }: Props) => {
   return (
     <LabelLayout $isActive={isActive} $px={px} $py={py}>
       {children}

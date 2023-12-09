@@ -10,6 +10,5 @@ export const ComponentListItem = styled.li<{ direction: 'row' | 'column' }>`
   display: flex;
   flex-direction: ${({ direction }) =>
     direction === 'row' || direction === 'column' ? direction : 'column'};
-  width: fit-content;
   gap: 8px;
 `;
