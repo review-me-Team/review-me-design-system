@@ -16,12 +16,12 @@ export default {
       control: 'text',
     },
     px: {
-      description: '라벨의 padding-left, padding-right 값을 지정합니다',
-      control: 'number',
+      description: '라벨의 padding-left, padding-right 값을 지정합니다. (단위 필수)',
+      control: 'text',
     },
     py: {
-      description: '라벨의 padding-top, padding-bottom 값을 지정합니다.',
-      control: 'number',
+      description: '라벨의 padding-top, padding-bottom 값을 지정합니다. (단위 필수)',
+      control: 'text',
     },
   },
   args: {
