@@ -1,22 +1,26 @@
 import styled, { css } from 'styled-components';
 
 const defaultButtonStyle = css`
-  padding: 12px 20px;
+  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.color.accent.bg.default};
-  border-radius: 10px;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.75rem;
+
   color: ${({ theme }) => theme.color.neutral.text.weak};
 `;
 
 const outlineButtonStyle = css`
-  padding: 12px 20px;
+  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
-  border: 1px solid ${({ theme }) => theme.color.accent.bd.strong};
-  border-radius: 10px;
+  border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.strong};
+  border-radius: 0.75rem;
+
   color: ${({ theme }) => theme.color.accent.text.strong};
 `;
 
 const ghostButtonStyle = css`
   background-color: transparent;
+
   color: ${({ theme }) => theme.color.accent.text.strong};
 `;
 
@@ -24,15 +28,16 @@ type variant = 'default' | 'outline' | 'ghost';
 type size = 's' | 'm' | 'l';
 
 const ButtonLayout = styled.button<{
-  variant: variant;
+  $variant: variant;
   size: size;
-  width?: string;
+  $width?: string;
 }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
   overflow: hidden;
+  width: fit-content;
 
   ${({ theme, size }) => {
     switch (size) {
@@ -44,9 +49,9 @@ const ButtonLayout = styled.button<{
         return theme.font.button.strong;
     }
   }}
-  ${({ width }) => width && `width: ${width}`};
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ $width }) => $width && `width: ${$width}`};
+  ${({ $variant }) => {
+    switch ($variant) {
       case 'default':
         return defaultButtonStyle;
       case 'outline':

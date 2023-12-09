@@ -14,7 +14,7 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({ variant, size, width, children, ...props }: Props) => {
   return (
-    <ButtonLayout variant={variant} size={size} width={width} {...props}>
+    <ButtonLayout $variant={variant} size={size} $width={width} {...props}>
       {children}
     </ButtonLayout>
   );
