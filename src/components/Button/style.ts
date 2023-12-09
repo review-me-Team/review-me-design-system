@@ -3,19 +3,28 @@ import styled, { css } from 'styled-components';
 const defaultButtonStyle = css`
   padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.color.accent.bg.default};
-  border: 0.0625rem solid transparent;
+  border: 0.125rem solid transparent;
   border-radius: 0.75rem;
 
   color: ${({ theme }) => theme.color.neutral.text.weak};
+
+  &:hover {
+    opacity: 0.9;
+    border: 0.125rem solid ${({ theme }) => theme.palette.green200};
+  }
 `;
 
 const outlineButtonStyle = css`
   padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
-  border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.strong};
+  border: 0.125rem solid ${({ theme }) => theme.color.accent.bd.strong};
   border-radius: 0.75rem;
 
   color: ${({ theme }) => theme.color.accent.text.strong};
+
+  &:hover {
+    border: 0.125rem solid ${({ theme }) => theme.palette.green200};
+  }
 `;
 
 const ghostButtonStyle = css`
