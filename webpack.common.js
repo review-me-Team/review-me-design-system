@@ -18,26 +18,16 @@ module.exports = {
         },
       },
       {
-        test: /\.svg$/i,
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
         use: {
           loader: '@svgr/webpack',
-        },
-      },
-      {
-        test: /\.svg$/i,
-        use: {
-          loader: 'url-loader',
-          options: {
-            publicPath: './dist/',
-            name: '[name].[ext]?[hash]',
-            limit: 5000,
-          },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.json', '.svg'],
     alias: {
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@components': path.resolve(__dirname, 'src/components'),
