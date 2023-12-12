@@ -13,10 +13,10 @@ const defaultLabelStyle = css`
 const activeLabelStyle = css`
   background-color: ${({ theme }) => theme.color.accent.bg.default};
   border: 0.125rem solid transparent;
-  color: ${({ theme }) => theme.palette.white};
+  color: ${({ theme }) => theme.color.neutral.text.weak};
 
   & > svg {
-    fill: ${({ theme }) => theme.palette.white};
+    fill: ${({ theme }) => theme.color.neutral.text.weak};
   }
 `;
 
