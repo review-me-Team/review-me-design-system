@@ -23,7 +23,8 @@ const outlineButtonStyle = css`
   color: ${({ theme }) => theme.color.accent.text.strong};
 
   &:hover {
-    border: 0.0625rem solid ${({ theme }) => theme.palette.green200};
+    opacity: 0.9;
+    background-color: ${({ theme }) => theme.palette.green100};
   }
 `;
 
