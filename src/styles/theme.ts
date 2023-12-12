@@ -88,6 +88,7 @@ const palette = {
   red: '#FF3B30',
   navy: '#0025E6',
   white: '#FFFFFF',
+  black: '#000000',
   green50: '#F8FBF4',
   green100: '#D8F3DC',
   green200: '#B7E4C7',
@@ -114,9 +115,9 @@ const color = {
   neutral: {
     text: {
       weak: palette.white,
-      default: palette.grey800,
+      default: palette.grey900,
       sub: palette.grey400,
-      strong: palette.grey900,
+      strong: palette.black,
     },
     bg: {
       default: palette.white,
