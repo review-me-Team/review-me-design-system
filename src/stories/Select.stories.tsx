@@ -23,6 +23,7 @@ export const Default: Story = {
     options: [
       { id: 'apple', value: '사과' },
       { id: 'graph', value: '포도' },
+      { id: 'banana', value: '바나나' },
     ],
   },
 };
@@ -40,6 +41,7 @@ export const DefaultOption: Story = {
     options: [
       { id: 'apple', value: '사과' },
       { id: 'graph', value: '포도' },
+      { id: 'banana', value: '바나나' },
     ],
     defaultOption: { id: 'apple', value: '사과' },
   },
