@@ -16,6 +16,7 @@ const TriggerButton = styled.button`
 `;
 
 const SelectedValue = styled.span`
+  margin-right: 0.5rem;
   color: ${({ theme }) => theme.color.neutral.text.default};
   ${({ theme }) => theme.font.title.default}
 `;
