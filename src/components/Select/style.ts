@@ -9,6 +9,7 @@ const TriggerButton = styled.button`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 3rem;
   padding: 0.5rem 1.25rem;
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
