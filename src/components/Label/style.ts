@@ -8,15 +8,22 @@ const defaultLabelStyle = css`
   & > svg {
     fill: ${({ theme }) => theme.color.neutral.text.default};
   }
+  &:hover {
+    opacity: 0.9;
+    background-color: ${({ theme }) => theme.palette.green100};
+  }
 `;
 
 const activeLabelStyle = css`
   background-color: ${({ theme }) => theme.color.accent.bg.default};
   border: 0.125rem solid transparent;
-  color: ${({ theme }) => theme.palette.white};
+  color: ${({ theme }) => theme.color.neutral.text.weak};
 
   & > svg {
-    fill: ${({ theme }) => theme.palette.white};
+    fill: ${({ theme }) => theme.color.neutral.text.weak};
+  }
+  &:hover {
+    opacity: 0.9;
   }
 `;
 
@@ -30,10 +37,6 @@ const LabelLayout = styled.button<{ $isActive: boolean; $px: string; $py: string
 
   ${({ $isActive }) => ($isActive ? activeLabelStyle : defaultLabelStyle)}
   ${({ theme }) => theme.font.label}
-  
-  &:hover {
-    border: 0.125rem solid ${({ theme }) => theme.palette.green200};
-  }
 `;
 
 export { LabelLayout };

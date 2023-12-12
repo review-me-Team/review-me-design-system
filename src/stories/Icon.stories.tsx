@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import React from 'react';
 
-import { ComponentList, ComponentListItem, ComponentTable, Th, Tr } from '@styles/storyStyle';
+import { ComponentList, ComponentListItem } from '@styles/storyStyle';
 
 import Icon from '@components/Icon/Icon';
 
