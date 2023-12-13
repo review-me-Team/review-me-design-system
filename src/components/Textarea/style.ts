@@ -11,6 +11,8 @@ const StyledTextarea = styled.textarea<{ $isValid: boolean }>`
   ${({ theme }) => theme.font.body.default}
   color: ${({ theme }) => theme.color.neutral.text.default};
 
+  resize: none;
+
   &::placeholder {
     ${({ theme }) => theme.font.placeholder}
     color: ${({ theme }) => theme.color.accent.text.weak};
