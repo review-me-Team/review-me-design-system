@@ -15,6 +15,7 @@ const StyledTextarea = styled.textarea<{ $isValid: boolean }>`
     color: ${({ theme }) => theme.color.accent.text.weak};
   }
   &:focus {
+    border: 1px solid ${({ theme }) => theme.color.accent.bd.strong};
     color: ${({ theme }) => theme.color.neutral.text.default};
   }
 `;
