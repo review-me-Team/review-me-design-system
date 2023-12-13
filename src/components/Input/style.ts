@@ -8,13 +8,15 @@ const StyledInput = styled.input<{ $isValid: boolean }>`
   border: 0.0625rem solid
     ${({ $isValid, theme }) => ($isValid ? theme.color.accent.bd.weak : theme.color.system.red)};
 
-  ${({ theme }) => theme.font.placeholder}
+  ${({ theme }) => theme.font.body.default}
   color: ${({ theme }) => theme.color.neutral.text.default};
 
   &::placeholder {
+    ${({ theme }) => theme.font.placeholder}
     color: ${({ theme }) => theme.color.accent.text.weak};
   }
   &:focus {
+    border: 1px solid ${({ theme }) => theme.color.accent.bd.strong};
     color: ${({ theme }) => theme.color.neutral.text.default};
   }
 `;
