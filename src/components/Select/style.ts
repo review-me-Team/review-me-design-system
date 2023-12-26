@@ -28,7 +28,7 @@ const OptionList = styled.ul`
   width: 100%;
   position: absolute;
   top: 3.5rem;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.floating};
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.weak};
