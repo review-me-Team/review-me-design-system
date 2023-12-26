@@ -5,7 +5,7 @@ import { BackDrop, Description, ModalLayout, Title } from './style';
 
 interface Props {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: React.MouseEventHandler<HTMLElement>;
   modalRootId: string;
   children: ReactNode;
   width?: string;
