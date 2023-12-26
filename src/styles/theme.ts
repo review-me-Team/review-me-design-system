@@ -146,7 +146,12 @@ const color = {
   },
 } as const;
 
-const theme = { font, palette, color };
+const zIndex = {
+  modal: 20,
+  backDrop: 10,
+} as const;
+
+const theme = { font, palette, color, zIndex };
 type ThemeType = typeof theme;
 
 export { theme, ThemeType };
