@@ -55,7 +55,7 @@ export const Default: Story = {
           height={height}
           padding={padding}
         >
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <Modal.Title>title</Modal.Title>
             <Modal.Description>description</Modal.Description>
           </div>
