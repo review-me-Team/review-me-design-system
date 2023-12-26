@@ -9,7 +9,7 @@ const ModalLayout = styled.div<{ $width?: string; $height?: string; $padding?: s
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 20;
+  z-index: ${({ theme }) => theme.zIndex.modal};
   width: ${({ $width }) => ($width ? $width : 'fit-content')};
   height: ${({ $height }) => ($height ? $height : 'fit-content')};
   padding: ${({ $padding }) => ($padding ? $padding : '1.25rem')};
@@ -36,7 +36,7 @@ const BackDrop = styled.div`
   left: 0;
   right: 0;
   background-color: rgb(0 0 0 / 0.5);
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.backDrop};
 `;
 
 export { ModalLayout, Title, Description, BackDrop };
