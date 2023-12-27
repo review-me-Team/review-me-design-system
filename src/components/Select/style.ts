@@ -9,8 +9,8 @@ const TriggerButton = styled.button`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 3rem;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.weak};
@@ -19,7 +19,7 @@ const TriggerButton = styled.button`
 const SelectedValue = styled.span`
   margin-right: 0.5rem;
   color: ${({ theme }) => theme.color.neutral.text.default};
-  ${({ theme }) => theme.font.title.default}
+  ${({ theme }) => theme.font.body.default}
 `;
 
 const OptionList = styled.ul`
@@ -40,7 +40,6 @@ const OptionList = styled.ul`
 
 const defaultOptionStyle = css`
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
-  color: ${({ theme }) => theme.color.accent.text.weak};
 
   &:hover {
     background-color: ${({ theme }) => theme.palette.green50};
@@ -49,7 +48,6 @@ const defaultOptionStyle = css`
 
 const selectedOptionStyle = css`
   background-color: ${({ theme }) => theme.palette.green100};
-  color: ${({ theme }) => theme.color.neutral.text.strong};
 `;
 
 const OptionItem = styled.li<{ $isSelected: boolean }>`
@@ -60,7 +58,8 @@ const OptionItem = styled.li<{ $isSelected: boolean }>`
   ${({ $isSelected }) => ($isSelected ? selectedOptionStyle : defaultOptionStyle)}
   border-bottom: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.weak};
 
-  ${({ theme }) => theme.font.title.default}
+  ${({ theme }) => theme.font.body.default}
+  color: ${({ theme }) => theme.color.neutral.text.strong};
 `;
 
 export { SelectLayout, TriggerButton, SelectedValue, OptionList, OptionItem };
