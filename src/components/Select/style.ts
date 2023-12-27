@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
-const SelectLayout = styled.div`
+const SelectLayout = styled.div<{ $width: string }>`
   position: relative;
+  width: ${({ $width }) => $width};
 `;
 
 const TriggerButton = styled.button`
@@ -9,11 +10,16 @@ const TriggerButton = styled.button`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-width: 5.625rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.weak};
+
+  & > svg {
+    flex-shrink: 0;
+  }
 `;
 
 const SelectedValue = styled.span`
@@ -26,8 +32,9 @@ const OptionList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 5.625rem;
   position: absolute;
-  top: 3.5rem;
+  top: calc(100% + 0.5rem);
   z-index: ${({ theme }) => theme.zIndex.floating};
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};

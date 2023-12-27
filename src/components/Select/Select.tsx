@@ -12,27 +12,27 @@ interface Option {
 interface Props {
   options: Option[];
   defaultOption?: Option;
+  width?: string;
 }
 
-const Select = ({ options, defaultOption }: Props) => {
+const Select = ({ options, defaultOption, width = '100%' }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | undefined>(defaultOption);
 
   return (
-    <SelectLayout>
+    <SelectLayout $width={width}>
       <TriggerButton onClick={() => setIsOpen((prev) => !prev)}>
         <SelectedValue>{selectedOption?.value ?? ''}</SelectedValue>
         {isOpen ? <Icon iconName="upArrow" /> : <Icon iconName="downArrow" />}
       </TriggerButton>
 
       {isOpen && (
-        <OptionList>
+        <OptionList onClick={() => setIsOpen(false)}>
           {options.map((option) => (
             <OptionItem
               key={option.id}
               $isSelected={selectedOption?.id === option.id}
               onClick={() => {
-                setIsOpen(false);
                 setSelectedOption(option);
               }}
             >
