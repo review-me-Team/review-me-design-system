@@ -59,7 +59,7 @@ const selectedOptionStyle = css`
 
 const OptionItem = styled.li<{ $isSelected: boolean }>`
   display: flex;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 0.75rem;
   align-items: center;
 
   ${({ $isSelected }) => ($isSelected ? selectedOptionStyle : defaultOptionStyle)}
