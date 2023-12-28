@@ -63,7 +63,6 @@ const OptionItem = styled.li<{ $isSelected: boolean }>`
   align-items: center;
 
   ${({ $isSelected }) => ($isSelected ? selectedOptionStyle : defaultOptionStyle)}
-  border-bottom: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.weak};
 
   ${({ theme }) => theme.font.body.default}
   color: ${({ theme }) => theme.color.neutral.text.strong};
