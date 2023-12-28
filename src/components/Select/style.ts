@@ -28,20 +28,31 @@ const SelectedValue = styled.span`
   ${({ theme }) => theme.font.body.default}
 `;
 
-const OptionList = styled.ul`
+const OptionList = styled.ul<{ maxHeight?: string }>`
   display: flex;
   flex-direction: column;
   width: 100%;
   min-width: 5.625rem;
+  max-height: ${({ maxHeight }) => maxHeight ?? 'none'};
   position: absolute;
   top: calc(100% + 0.5rem);
   z-index: ${({ theme }) => theme.zIndex.floating};
+  overflow-y: auto;
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.weak};
+  border-radius: 0.25rem;
 
-  & li:last-child {
-    border-bottom: none;
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.palette.green100};
+    border-radius: 0.25rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.color.accent.bg.strong};
+    border-radius: 0.5rem;
   }
 `;
 

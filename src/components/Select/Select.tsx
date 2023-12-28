@@ -13,9 +13,10 @@ interface Props {
   options: Option[];
   defaultOption?: Option;
   width?: string;
+  maxHeight?: string;
 }
 
-const Select = ({ options, defaultOption, width = '100%' }: Props) => {
+const Select = ({ options, defaultOption, width = '100%', maxHeight }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | undefined>(defaultOption);
 
@@ -27,7 +28,7 @@ const Select = ({ options, defaultOption, width = '100%' }: Props) => {
       </TriggerButton>
 
       {isOpen && (
-        <OptionList onClick={() => setIsOpen(false)}>
+        <OptionList onClick={() => setIsOpen(false)} maxHeight={maxHeight}>
           {options.map((option) => (
             <OptionItem
               key={option.id}
