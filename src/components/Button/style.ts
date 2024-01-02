@@ -12,6 +12,7 @@ const defaultButtonStyle = css`
     opacity: 0.9;
     border: 0.0625rem solid ${({ theme }) => theme.palette.green200};
   }
+  transition: all 0.2s ease-in-out;
 `;
 
 const outlineButtonStyle = css`
@@ -26,6 +27,7 @@ const outlineButtonStyle = css`
     opacity: 0.9;
     background-color: ${({ theme }) => theme.palette.green100};
   }
+  transition: all 0.2s ease-in-out;
 `;
 
 const ghostButtonStyle = css`
