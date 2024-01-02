@@ -12,6 +12,7 @@ const defaultLabelStyle = css`
     opacity: 0.9;
     background-color: ${({ theme }) => theme.palette.green100};
   }
+  transition: all 0.2s ease-in-out;
 `;
 
 const activeLabelStyle = css`
@@ -25,6 +26,7 @@ const activeLabelStyle = css`
   &:hover {
     opacity: 0.9;
   }
+  transition: all 0.2s ease-in-out;
 `;
 
 const LabelLayout = styled.button<{ $isActive: boolean; $px: string; $py: string }>`
