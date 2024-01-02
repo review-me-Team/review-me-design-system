@@ -2,11 +2,12 @@ import React from 'react';
 
 import { useOptionContext } from '@contexts/OptionContext';
 
+import { Label, Value } from './Select.types';
 import { OptionItem as OptionItemLayout } from './style';
 
 interface Props {
-  value: string | number;
-  label: string | number;
+  value: Value;
+  label: Label;
   children: React.ReactNode;
 }
 

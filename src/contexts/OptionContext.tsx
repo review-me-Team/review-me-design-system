@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
-interface Option {
-  value: string | number;
-  label: string | number;
-}
+import { Option } from '@components/Select/Select.types';
+
 interface OptionContextType {
   selectedOption?: Option;
   onSelectOption: (option?: Option) => void;

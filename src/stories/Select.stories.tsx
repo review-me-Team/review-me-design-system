@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
 import Select from '@components/Select/Select';
+import { Option } from '@components/Select/Select.types';
 
 export default {
   title: 'Select',
@@ -35,10 +36,6 @@ export default {
 } as Meta<typeof Select>;
 
 type Story = StoryObj<typeof Select>;
-interface Option {
-  label: number | string;
-  value: number | string;
-}
 
 export const Default: Story = {
   render: () => {
