@@ -149,6 +149,7 @@ const color = {
 const zIndex = {
   modal: 20,
   backDrop: 10,
+  floating: 1,
 } as const;
 
 const theme = { font, palette, color, zIndex };

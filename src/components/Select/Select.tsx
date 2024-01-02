@@ -1,48 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Icon from '@components/Icon/Icon';
+import OptionProvider from '@contexts/OptionContext';
+import { SelectProvider } from '@contexts/SelectContext';
 
-import { OptionItem, OptionList, SelectLayout, SelectedValue, TriggerButton } from './style';
+import OptionItem from './OptionItem';
+import OptionList from './OptionList';
+import { SelectLayout } from './style';
+import TriggerButton from './TriggerButton';
+import TriggerInput from './TriggerInput';
 
 interface Option {
-  id: number | string;
-  value: string;
+  label: number | string;
+  value: number | string;
 }
 
 interface Props {
-  options: Option[];
   defaultOption?: Option;
+  onSelectOption?: (option?: Option) => void;
+  width?: string;
+  children: React.ReactNode;
 }
 
-const Select = ({ options, defaultOption }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<Option | undefined>(defaultOption);
-
+const Select = ({ defaultOption, onSelectOption, width = '100%', children }: Props) => {
   return (
-    <SelectLayout>
-      <TriggerButton onClick={() => setIsOpen((prev) => !prev)}>
-        <SelectedValue>{selectedOption?.value ?? ''}</SelectedValue>
-        {isOpen ? <Icon iconName="upArrow" /> : <Icon iconName="downArrow" />}
-      </TriggerButton>
-
-      {isOpen && (
-        <OptionList>
-          {options.map((option) => (
-            <OptionItem
-              key={option.id}
-              $isSelected={selectedOption?.id === option.id}
-              onClick={() => {
-                setIsOpen(false);
-                setSelectedOption(option);
-              }}
-            >
-              {option.value}
-            </OptionItem>
-          ))}
-        </OptionList>
-      )}
-    </SelectLayout>
+    <SelectProvider>
+      <OptionProvider store={{ defaultOption, onSelectOption }}>
+        <SelectLayout $width={width}>{children}</SelectLayout>
+      </OptionProvider>
+    </SelectProvider>
   );
 };
+
+Select.TriggerButton = TriggerButton;
+Select.TriggerInput = TriggerInput;
+Select.OptionList = OptionList;
+Select.OptionItem = OptionItem;
 
 export default Select;
