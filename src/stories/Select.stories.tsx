@@ -10,7 +10,7 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     defaultOption: {
-      description: '기본으로 선택된 option입니다.',
+      description: '기본으로 선택된 option입니다. (label: option의 text, value: option의 value)',
     },
     onSelectOption: {
       description: 'option을 선택했을 때의 handler입니다.',
