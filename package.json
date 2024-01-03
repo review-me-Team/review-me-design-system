@@ -1,6 +1,6 @@
 {
   "name": "review-me-design-system",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "review me 디자인 시스템",
   "private": false,
   "module": "dist/index.js",
@@ -23,6 +23,10 @@
       "url": "https://github.com/aken-you"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/review-me-Team/review-me-design-system"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
