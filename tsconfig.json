@@ -9,6 +9,8 @@
     "jsx": "react",
     "outDir": "./dist",
     "baseUrl": "./src",
+    "declaration": true,
+    "moduleResolution": "node",
     "paths": {
       "@pages/*": ["./pages/*"],
       "@components/*": ["./components/*"],
