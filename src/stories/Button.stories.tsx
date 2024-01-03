@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import React from 'react';
 
-import { ComponentList, ComponentListItem } from '@stories/storyStyle';
-
 import Button from '@components/Button/Button';
+
+import { ComponentList, ComponentListItem } from './storyStyle';
 
 const meta: Meta<typeof Button> = {
   title: 'Button',
