@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import React from 'react';
 
-import { ComponentList, ComponentListItem } from '@styles/storyStyle';
+import { ComponentList, ComponentListItem } from '@stories/storyStyle';
 
 import Button from '@components/Button/Button';
 
