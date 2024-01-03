@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 
 import { useOptionContext } from '@contexts/OptionContext';
 import { useSelectContext } from '@contexts/SelectContext';
@@ -7,7 +7,7 @@ import Icon from '@components/Icon/Icon';
 
 import { TriggerButton as TriggerButtonLayout, SelectedValue } from './style';
 
-interface Props {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   placeholder?: string;
 }
 

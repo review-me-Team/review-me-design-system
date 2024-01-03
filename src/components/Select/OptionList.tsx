@@ -4,7 +4,7 @@ import { useSelectContext } from '@contexts/SelectContext';
 
 import { OptionList as OptionListLayout } from './style';
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   maxHeight?: string;
 }

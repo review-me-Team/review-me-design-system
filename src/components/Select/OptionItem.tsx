@@ -5,7 +5,7 @@ import { useOptionContext } from '@contexts/OptionContext';
 import { Label, Value } from './Select.types';
 import { OptionItem as OptionItemLayout } from './style';
 
-interface Props {
+export interface Props {
   value: Value;
   label: Label;
   children: React.ReactNode;
