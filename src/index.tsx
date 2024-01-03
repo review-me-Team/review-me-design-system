@@ -1,6 +1,3 @@
-/** provider */
-import ReviewMeProvider from 'ReviewMeProvider';
-
 /** hooks */
 import useModal from '@hooks/useModal';
 
@@ -16,6 +13,9 @@ import Label from '@components/Label/Label';
 import Modal from '@components/Modal/Modal';
 import Select from '@components/Select/Select';
 import Textarea from '@components/Textarea/Textarea';
+
+/** provider */
+import ReviewMeProvider from './ReviewMeProvider';
 
 export {
   ReviewMeProvider,
