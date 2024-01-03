@@ -8,7 +8,7 @@
   "browser": "./browser/specific/main.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "rm -rf dist && mkdir dist && webpack --config webpack.prod.js && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -62,5 +62,9 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/review-me-Team/review-me-design-system/issues",
+    "email": "kinsk2839@naver.com"
   }
 }
