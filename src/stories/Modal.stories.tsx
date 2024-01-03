@@ -7,7 +7,7 @@ import useModal from '@hooks/useModal';
 import Button from '@components/Button/Button';
 import Modal from '@components/Modal/Modal';
 
-export default {
+const meta: Meta<typeof Modal> = {
   title: 'Modal',
   component: Modal,
   tags: ['autodocs'],
@@ -31,7 +31,9 @@ export default {
       description: '모달의 padding을 설정합니다. (기본값은 1.25rem)',
     },
   },
-} as Meta<typeof Modal>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Modal>;
 

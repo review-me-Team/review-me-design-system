@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Label from '@components/Label/Label';
 
-export default {
+const meta: Meta<typeof Label> = {
   title: 'Label',
   component: Label,
   tags: ['autodocs'],
@@ -28,7 +28,9 @@ export default {
     isActive: false,
     children: 'Label',
   },
-} satisfies Meta<typeof Label>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Label>;
 

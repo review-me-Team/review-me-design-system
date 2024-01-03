@@ -6,7 +6,7 @@ import { ComponentList, ComponentListItem } from '@styles/storyStyle';
 
 import Button from '@components/Button/Button';
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
   tags: ['autodocs'],
@@ -35,7 +35,9 @@ export default {
     children: 'button',
     width: '',
   },
-} satisfies Meta<typeof Button>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Button>;
 

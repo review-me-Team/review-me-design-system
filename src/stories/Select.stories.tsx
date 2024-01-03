@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Select from '@components/Select/Select';
 import { Option } from '@components/Select/Select.types';
 
-export default {
+const meta: Meta<typeof Select> = {
   title: 'Select',
   component: Select,
   tags: ['autodocs'],
@@ -33,7 +33,9 @@ export default {
       },
     },
   },
-} as Meta<typeof Select>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Select>;
 

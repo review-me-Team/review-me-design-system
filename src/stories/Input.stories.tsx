@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Input from '@components/Input/Input';
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'Input',
   component: Input,
   tags: ['autodocs'],
@@ -16,7 +16,9 @@ export default {
       control: 'text',
     },
   },
-} satisfies Meta<typeof Input>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Input>;
 
