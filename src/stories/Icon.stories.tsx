@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import React from 'react';
 
-import { ComponentList, ComponentListItem } from '@styles/storyStyle';
-
 import Icon from '@components/Icon/Icon';
 
-export default {
+import { ComponentList, ComponentListItem } from './storyStyle';
+
+const meta: Meta<typeof Icon> = {
   title: 'Icon',
   component: Icon,
   tags: ['autodocs'],
@@ -22,11 +22,13 @@ export default {
       description: 'Icon 컴포넌트의 세로 길이를 결정합니다. (단, 단위는 px기준입니다.)',
       control: 'number',
     },
-    fill: {
+    color: {
       description: 'Icon 컴포넌트의 색상을 결정합니다.',
     },
   },
-} as Meta<typeof Icon>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Icon>;
 

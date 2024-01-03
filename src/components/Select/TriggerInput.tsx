@@ -4,7 +4,7 @@ import { useSelectContext } from '@contexts/SelectContext';
 
 import Input from '@components/Input/Input';
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {}
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
 const TriggerInput = forwardRef<HTMLInputElement, Props>(({ ...props }, ref) => {
   const { onOpenChange } = useSelectContext();
