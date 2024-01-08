@@ -9,8 +9,6 @@ export const GlobalStyle = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
     box-sizing: border-box;
-  }
-  html, body {
     font-family: 'Noto Sans KR', sans-serif;
   }
   article, aside, details, footer, header, menu, nav, section {
