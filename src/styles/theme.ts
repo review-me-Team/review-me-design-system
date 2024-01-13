@@ -9,6 +9,7 @@ const FONT_SIZE = {
   XL: '1.5rem',
   L: '1.125rem',
   M: '1rem',
+  SM: '.875rem',
   S: '.75rem',
 };
 const LINE_HEIGHT = {
@@ -16,6 +17,7 @@ const LINE_HEIGHT = {
   XL: '2.5rem',
   L: '2rem',
   M: '1.75rem',
+  SM: '1.5rem',
   S: '1.25rem',
 };
 
@@ -52,8 +54,8 @@ const font = {
   button: {
     weak: css`
       font-weight: ${FONT_WEIGHT.BOLD};
-      font-size: ${FONT_SIZE.S};
-      line-height: ${LINE_HEIGHT.S};
+      font-size: ${FONT_SIZE.SM};
+      line-height: ${LINE_HEIGHT.SM};
     `,
     default: css`
       font-weight: ${FONT_WEIGHT.BOLD};
@@ -73,8 +75,8 @@ const font = {
   `,
   label: css`
     font-weight: ${FONT_WEIGHT.BOLD};
-    font-size: 14px;
-    line-height: ${LINE_HEIGHT.S};
+    font-size: ${FONT_SIZE.SM};
+    line-height: ${LINE_HEIGHT.SM};
   `,
   caption: css`
     font-weight: ${FONT_WEIGHT.BOLD};
