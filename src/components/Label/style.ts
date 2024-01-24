@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const defaultLabelStyle = css`
+const getDefaultLabelStyle = (clickable: boolean) => css`
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.125rem solid ${({ theme }) => theme.color.accent.bd.weak};
   color: ${({ theme }) => theme.color.neutral.text.default};
@@ -8,14 +8,18 @@ const defaultLabelStyle = css`
   & > svg {
     fill: ${({ theme }) => theme.color.neutral.text.default};
   }
-  &:hover {
-    opacity: 0.9;
-    background-color: ${({ theme }) => theme.palette.green100};
-  }
-  transition: all 0.2s ease-in-out;
+  ${clickable &&
+  css`
+    &:hover {
+      opacity: 0.9;
+      background-color: ${({ theme }) => theme.palette.green100};
+    }
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  `}
 `;
 
-const activeLabelStyle = css`
+const getActiveLabelStyle = (clickable: boolean) => css`
   background-color: ${({ theme }) => theme.color.accent.bg.default};
   border: 0.125rem solid transparent;
   color: ${({ theme }) => theme.color.neutral.text.weak};
@@ -23,13 +27,17 @@ const activeLabelStyle = css`
   & > svg {
     fill: ${({ theme }) => theme.color.neutral.text.weak};
   }
-  &:hover {
-    opacity: 0.9;
-  }
-  transition: all 0.2s ease-in-out;
+  ${clickable &&
+  css`
+    &:hover {
+      opacity: 0.9;
+    }
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  `}
 `;
 
-const LabelLayout = styled.button<{ $isActive: boolean; $px: string; $py: string }>`
+const LabelLayout = styled.div<{ $clickable: boolean; $isActive: boolean; $px: string; $py: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +45,8 @@ const LabelLayout = styled.button<{ $isActive: boolean; $px: string; $py: string
   padding: ${({ $py, $px }) => `${$py} ${$px}`};
   border-radius: 1rem;
 
-  ${({ $isActive }) => ($isActive ? activeLabelStyle : defaultLabelStyle)}
+  ${({ $clickable: $clickable, $isActive }) =>
+    $isActive ? getActiveLabelStyle($clickable) : getDefaultLabelStyle($clickable)}
   ${({ theme }) => theme.font.label}
 `;
 
