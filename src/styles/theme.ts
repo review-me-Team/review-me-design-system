@@ -23,6 +23,11 @@ const LINE_HEIGHT = {
 
 const font = {
   body: {
+    weak: css`
+      font-weight: ${FONT_WEIGHT.REGULAR};
+      font-size: ${FONT_SIZE.SM};
+      line-height: ${LINE_HEIGHT.SM};
+    `,
     default: css`
       font-weight: ${FONT_WEIGHT.REGULAR};
       font-size: ${FONT_SIZE.M};
@@ -35,6 +40,11 @@ const font = {
     `,
   },
   title: {
+    weak: css`
+      font-weight: ${FONT_WEIGHT.BOLD};
+      font-size: ${FONT_SIZE.SM};
+      line-height: ${LINE_HEIGHT.SM};
+    `,
     default: css`
       font-weight: ${FONT_WEIGHT.BOLD};
       font-size: ${FONT_SIZE.L};
@@ -154,7 +164,7 @@ const zIndex = {
   floating: 1,
 } as const;
 
-const theme = { font, palette, color, zIndex };
+const theme = { FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, font, palette, color, zIndex };
 type ThemeType = typeof theme;
 
 export { theme, ThemeType };
