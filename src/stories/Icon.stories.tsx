@@ -49,10 +49,16 @@ export const IconNames: Story = {
           <h3>clip</h3>
           <Icon iconName="clip" width={width} height={height} color={color} />
         </ComponentListItem>
-        <ComponentListItem direction="column">
-          <h3>person</h3>
-          <Icon iconName="person" width={width} height={height} color={color} />
-        </ComponentListItem>
+        <ComponentList direction="row">
+          <ComponentListItem direction="column">
+            <h3>person</h3>
+            <Icon iconName="person" width={width} height={height} color={color} />
+          </ComponentListItem>
+          <ComponentListItem direction="column">
+            <h3>menu</h3>
+            <Icon iconName="menu" width={width} height={height} color={color} />
+          </ComponentListItem>
+        </ComponentList>
 
         <ComponentList direction="row">
           <ComponentListItem direction="column">
