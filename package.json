@@ -1,6 +1,6 @@
 {
   "name": "review-me-design-system",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "review me 디자인 시스템",
   "private": false,
   "module": "dist/index.js",
