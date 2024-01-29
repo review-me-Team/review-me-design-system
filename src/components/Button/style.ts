@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 const defaultButtonStyle = css`
-  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.color.accent.bg.default};
   border: 0.0625rem solid transparent;
   border-radius: 0.75rem;
@@ -16,7 +15,6 @@ const defaultButtonStyle = css`
 `;
 
 const outlineButtonStyle = css`
-  padding: 0.75rem 1.25rem;
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.strong};
   border-radius: 0.75rem;
@@ -54,11 +52,20 @@ const ButtonLayout = styled.button<{
   ${({ theme, size }) => {
     switch (size) {
       case 's':
-        return theme.font.button.weak;
+        return css`
+          ${theme.font.button.weak}
+          padding: 0.5rem 0.75rem;
+        `;
       case 'm':
-        return theme.font.button.default;
+        return css`
+          ${theme.font.button.default}
+          padding: 0.5rem 1rem;
+        `;
       case 'l':
-        return theme.font.button.strong;
+        return css`
+          ${theme.font.button.strong}
+          padding: 0.75rem 1.25rem;
+        `;
     }
   }}
   ${({ $width }) => $width && `width: ${$width}`};
