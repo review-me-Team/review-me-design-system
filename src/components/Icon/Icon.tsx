@@ -9,6 +9,7 @@ import Emoji from '@assets/Emoji.svg';
 import FilledBookMark from '@assets/FilledBookMark.svg';
 import FilledCheckMark from '@assets/FilledCheckMark.svg';
 import LeftArrow from '@assets/LeftArrow.svg';
+import Menu from '@assets/Menu.svg';
 import Minus from '@assets/Minus.svg';
 import More from '@assets/More.svg';
 import Person from '@assets/Person.svg';
@@ -27,6 +28,7 @@ const ICON_NAME = {
   FILLED_BOOK_MARK: 'filledBookMark',
   FILLED_CHECK_MARK: 'filledCheckMark',
   LEFT_ARROW: 'leftArrow',
+  MENU: 'menu',
   MINUS: 'minus',
   MORE: 'more',
   PERSON: 'person',
@@ -46,6 +48,7 @@ const IconComponents = {
   [ICON_NAME.FILLED_BOOK_MARK]: FilledBookMark,
   [ICON_NAME.FILLED_CHECK_MARK]: FilledCheckMark,
   [ICON_NAME.LEFT_ARROW]: LeftArrow,
+  [ICON_NAME.MENU]: Menu,
   [ICON_NAME.MINUS]: Minus,
   [ICON_NAME.MORE]: More,
   [ICON_NAME.PERSON]: Person,
