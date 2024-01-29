@@ -59,25 +59,25 @@ export const Variants: Story = {
   argTypes: {
     variant: { control: { disable: true } },
   },
-  render: ({ size, width }) => {
+  render: ({ size, width, children }) => {
     return (
       <ComponentList direction="column">
         <ComponentListItem direction="column">
           <h3>default</h3>
           <Button variant="default" size={size} width={width}>
-            button
+            {children}
           </Button>
         </ComponentListItem>
         <ComponentListItem direction="column">
           <h3>outline</h3>
           <Button variant="outline" size={size} width={width}>
-            button
+            {children}
           </Button>
         </ComponentListItem>
         <ComponentListItem direction="column">
           <h3>ghost</h3>
           <Button variant="ghost" size={size} width={width}>
-            button
+            {children}
           </Button>
         </ComponentListItem>
       </ComponentList>
@@ -96,25 +96,25 @@ export const Sizes: Story = {
   argTypes: {
     size: { control: { disable: true } },
   },
-  render: ({ variant, width }) => {
+  render: ({ variant, width, children }) => {
     return (
       <ComponentList direction="column">
         <ComponentListItem direction="column">
           <h3>s</h3>
           <Button variant={variant} size="s" width={width}>
-            button
+            {children}
           </Button>
         </ComponentListItem>
         <ComponentListItem direction="column">
           <h3>m</h3>
           <Button variant={variant} size="m" width={width}>
-            button
+            {children}
           </Button>
         </ComponentListItem>
         <ComponentListItem direction="column">
           <h3>l</h3>
           <Button variant={variant} size="l" width={width}>
-            button
+            {children}
           </Button>
         </ComponentListItem>
       </ComponentList>
