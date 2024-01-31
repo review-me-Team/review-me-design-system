@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, forwardRef } from 'react';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { useSyncRef } from '@hooks/useSyncRef';
 
@@ -9,12 +9,12 @@ import Icon from '@components/Icon/Icon';
 
 import { TriggerButton as TriggerButtonLayout, SelectedValue } from './style';
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends ComponentPropsWithRef<'button'> {
   label?: string;
   height?: string;
 }
 
-const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label, height }, ref) => {
+const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label, height = 'fit-content' }, ref) => {
   const { isOpen, onOpenChange, triggerRef } = useSelectContext();
   const { selectedOption } = useOptionContext();
 
@@ -28,7 +28,7 @@ const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label, height }, r
         onOpenChange(!isOpen);
       }}
     >
-      <SelectedValue>{selectedOption?.name ?? label ?? ''}</SelectedValue>
+      <SelectedValue>{`${selectedOption?.name ?? label ?? ''}`}</SelectedValue>
       {isOpen ? <Icon iconName="upArrow" /> : <Icon iconName="downArrow" />}
     </TriggerButtonLayout>
   );
