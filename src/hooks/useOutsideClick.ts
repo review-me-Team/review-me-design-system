@@ -14,7 +14,6 @@ const useOutsideClick = ({ isOpen, triggerRef, listRef, onClick }: Props) => {
 
       const targetElement = e.target as Node;
 
-      console.log('outside click', triggerRef.current.contains(targetElement));
       if (!triggerRef.current.contains(targetElement) && !listRef.current.contains(targetElement)) {
         onClick(e);
       }
