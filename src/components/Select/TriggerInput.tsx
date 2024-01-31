@@ -1,5 +1,7 @@
 import React, { InputHTMLAttributes, forwardRef } from 'react';
 
+import { useSyncRef } from '@hooks/useSyncRef';
+
 import { useSelectContext } from '@contexts/SelectContext';
 
 import Input from '@components/Input/Input';
@@ -7,11 +9,13 @@ import Input from '@components/Input/Input';
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
 const TriggerInput = forwardRef<HTMLInputElement, Props>(({ ...props }, ref) => {
-  const { onOpenChange } = useSelectContext();
+  const { onOpenChange, triggerRef } = useSelectContext();
+
+  const inputRef = useSyncRef(ref, triggerRef);
 
   return (
     <Input
-      ref={ref}
+      ref={inputRef}
       onFocus={() => onOpenChange(true)}
       onBlur={() => {
         onOpenChange(false);

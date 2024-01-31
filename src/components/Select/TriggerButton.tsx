@@ -1,5 +1,7 @@
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 
+import { useSyncRef } from '@hooks/useSyncRef';
+
 import { useOptionContext } from '@contexts/OptionContext';
 import { useSelectContext } from '@contexts/SelectContext';
 
@@ -12,11 +14,18 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ placeholder }, ref) => {
-  const { isOpen, onOpenChange } = useSelectContext();
+  const { isOpen, onOpenChange, triggerRef } = useSelectContext();
   const { selectedOption } = useOptionContext();
 
+  const buttonRef = useSyncRef(triggerRef, ref);
+
   return (
-    <TriggerButtonLayout ref={ref} onClick={() => onOpenChange(!isOpen)}>
+    <TriggerButtonLayout
+      ref={buttonRef}
+      onClick={() => {
+        onOpenChange(!isOpen);
+      }}
+    >
       <SelectedValue>{selectedOption?.label ?? placeholder ?? ''}</SelectedValue>
       {isOpen ? <Icon iconName="upArrow" /> : <Icon iconName="downArrow" />}
     </TriggerButtonLayout>
