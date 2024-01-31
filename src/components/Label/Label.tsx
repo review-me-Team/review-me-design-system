@@ -1,16 +1,22 @@
-import React, { MouseEventHandler, ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, MouseEventHandler, PropsWithChildren } from 'react';
 
 import { LabelLayout } from './style';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   isActive: boolean;
-  children: ReactNode;
   onClick?: MouseEventHandler<HTMLDivElement>;
   px?: string;
   py?: string;
 }
 
-const Label = ({ onClick, isActive, children, px = '1.25rem', py = '0.5rem', ...props }: Props) => {
+const Label = ({
+  onClick,
+  isActive,
+  children,
+  px = '1.25rem',
+  py = '0.5rem',
+  ...props
+}: PropsWithChildren<Props>) => {
   return (
     <LabelLayout
       onClick={onClick}

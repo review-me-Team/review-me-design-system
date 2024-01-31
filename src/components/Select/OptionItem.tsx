@@ -1,17 +1,16 @@
-import React, { forwardRef } from 'react';
+import React, { ComponentPropsWithRef, PropsWithChildren, forwardRef } from 'react';
 
 import { useOptionContext } from '@contexts/OptionContext';
 
 import { Name, Value } from './Select.types';
 import { OptionItem as OptionItemLayout } from './style';
 
-export interface Props {
+export interface Props extends ComponentPropsWithRef<'li'> {
   value: Value;
   name: Name;
-  children: React.ReactNode;
 }
 
-const OptionItem = forwardRef<HTMLLIElement, Props>(({ value, name, children }, ref) => {
+const OptionItem = forwardRef<HTMLLIElement, PropsWithChildren<Props>>(({ value, name, children }, ref) => {
   const { selectedOption, onSelectOption } = useOptionContext();
 
   return (

@@ -1,13 +1,12 @@
-import React, { ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { BackDrop, Description, ModalLayout, Title } from './style';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   isOpen: boolean;
   onClose: React.MouseEventHandler<HTMLElement>;
   modalRootId: string;
-  children: ReactNode;
   width?: string;
   height?: string;
   padding?: string;
