@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useRef, useState } from 'react';
+import React, { RefObject, createContext, useContext, useRef, useState } from 'react';
 
 interface SelectContextType {
   isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
-  triggerRef: React.RefObject<HTMLElement>;
-  listRef: React.RefObject<HTMLUListElement>;
+  triggerRef: RefObject<HTMLElement>;
+  listRef: RefObject<HTMLUListElement>;
 }
 
 export const SelectContext = createContext<SelectContextType | null>(null);
