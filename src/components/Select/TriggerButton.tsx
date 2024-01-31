@@ -11,9 +11,10 @@ import { TriggerButton as TriggerButtonLayout, SelectedValue } from './style';
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
+  height?: string;
 }
 
-const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label }, ref) => {
+const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label, height }, ref) => {
   const { isOpen, onOpenChange, triggerRef } = useSelectContext();
   const { selectedOption } = useOptionContext();
 
@@ -22,6 +23,7 @@ const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label }, ref) => {
   return (
     <TriggerButtonLayout
       ref={buttonRef}
+      $height={height}
       onClick={() => {
         onOpenChange(!isOpen);
       }}
