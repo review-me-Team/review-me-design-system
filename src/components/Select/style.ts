@@ -5,13 +5,14 @@ const SelectLayout = styled.div<{ $width: string }>`
   width: ${({ $width }) => $width};
 `;
 
-const TriggerButton = styled.button`
+const TriggerButton = styled.button<{ $height?: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: ${({ $height }) => $height || 'fit-content'};
   min-width: 5.625rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
 
   background-color: ${({ theme }) => theme.color.neutral.bg.default};

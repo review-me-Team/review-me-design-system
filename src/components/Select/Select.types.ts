@@ -1,13 +1,13 @@
 /**
- * Label: option에 표시할 text
+ * Name: option에 표시할 text
  */
-export type Label = number | string;
+export type Name = number | string;
 /**
  * Value: option의 value
  */
 export type Value = number | string;
 
 export interface Option {
-  label: Label;
   value: Value;
+  name: Name;
 }

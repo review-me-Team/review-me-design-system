@@ -11,7 +11,7 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   argTypes: {
     defaultOption: {
-      description: '기본으로 선택된 option입니다. (label: option의 text, value: option의 value)',
+      description: '기본으로 선택된 option입니다. (name: option의 text, value: option의 value)',
       control: 'object',
     },
     onSelectOption: {
@@ -29,7 +29,7 @@ const meta: Meta<typeof Select> = {
     docs: {
       description: {
         component:
-          'Select 컴포넌트는 Compound Component Pattern을 적용합니다. `<Select.TriggerButton>` 혹은 `<Select.TriggerInput>` 다음에 `<Select.OptionList>`를 선언해주세요.\n- `<Select.TriggerButton>`은 option 목록을 여닫는 버튼 컴포넌트입니다.\n- `<Select.TriggerInput>`은 입력한 검색어에 해당하는 option 목록을 보여주는 input 컴포넌트입니다.\n- `<Select.OptionList>`는 option 목록에 해당하는 컴포넌트입니다. maxHeight prop을 통해 높이를 정할 수 있습니다.\n- `<Select.OptionItem>`은 option에 해당하는 컴포넌트입니다. prop으로 value에 option의 value를, label에 option의 text를 입력해주세요.',
+          'Select 컴포넌트는 Compound Component Pattern을 적용합니다. `<Select.TriggerButton>` 혹은 `<Select.TriggerInput>` 다음에 `<Select.OptionList>`를 선언해주세요.\n- `<Select.TriggerButton>`은 option 목록을 여닫는 버튼 컴포넌트입니다.\n- `<Select.TriggerInput>`은 입력한 검색어에 해당하는 option 목록을 보여주는 input 컴포넌트입니다.\n- `<Select.OptionList>`는 option 목록에 해당하는 컴포넌트입니다. maxHeight prop을 통해 높이를 정할 수 있습니다.\n- `<Select.OptionItem>`은 option에 해당하는 컴포넌트입니다. prop으로 value에 option의 value를, name에 option의 text를 입력해주세요.',
       },
     },
   },
@@ -43,9 +43,9 @@ export const Default: Story = {
   render: () => {
     const [, setSelectedOption] = useState<Option | undefined>();
     const options = [
-      { value: 'apple', label: '사과' },
-      { value: 'graph', label: '포도' },
-      { value: 'banana', label: '바나나' },
+      { value: 'apple', name: '사과' },
+      { value: 'graph', name: '포도' },
+      { value: 'banana', name: '바나나' },
     ];
 
     return (
@@ -54,8 +54,8 @@ export const Default: Story = {
         <Select.OptionList>
           {options.map((option) => {
             return (
-              <Select.OptionItem key={option.value} value={option.value} label={option.label}>
-                {option.label}
+              <Select.OptionItem key={option.value} value={option.value} name={option.name}>
+                {option.name}
               </Select.OptionItem>
             );
           })}
@@ -76,9 +76,9 @@ export const DefaultOption: Story = {
   render: () => {
     const [, setSelectedOption] = useState<Option | undefined>();
     const options = [
-      { value: 'apple', label: '사과' },
-      { value: 'graph', label: '포도' },
-      { value: 'banana', label: '바나나' },
+      { value: 'apple', name: '사과' },
+      { value: 'graph', name: '포도' },
+      { value: 'banana', name: '바나나' },
     ];
     const defaultOption = options[1];
 
@@ -88,59 +88,8 @@ export const DefaultOption: Story = {
         <Select.OptionList>
           {options.map((option) => {
             return (
-              <Select.OptionItem key={option.value} value={option.value} label={option.label}>
-                {option.label}
-              </Select.OptionItem>
-            );
-          })}
-        </Select.OptionList>
-      </Select>
-    );
-  },
-};
-
-export const SearchInput: Story = {
-  parameters: {
-    docs: {
-      description: {
-        story: '검색 기능이 가능합니다.',
-      },
-    },
-  },
-  render: () => {
-    const options = [
-      { value: 'apple', label: '사과' },
-      { value: 'graph', label: '포도' },
-      { value: 'banana', label: '바나나' },
-    ];
-
-    const [selectedOption, setSelectedOption] = useState<Option | undefined>();
-    const [typedValue, setTypedValue] = useState<string | number | undefined>();
-    const typedValueString = String(typedValue ?? '');
-    const filteredOptions =
-      options.filter((option) => String(option.label).startsWith(typedValueString)).length > 0
-        ? options.filter((option) => String(option.label).startsWith(typedValueString))
-        : options;
-
-    return (
-      <Select
-        onSelectOption={(option) => {
-          setSelectedOption(option);
-          setTypedValue(option?.label);
-        }}
-      >
-        <Select.TriggerInput
-          value={typedValue ?? selectedOption?.label ?? ''}
-          onChange={({ target }) => {
-            setTypedValue(target.value);
-            if (target.value !== selectedOption?.label) setSelectedOption(undefined);
-          }}
-        />
-        <Select.OptionList>
-          {filteredOptions.map((option) => {
-            return (
-              <Select.OptionItem key={option.value} value={option.value} label={option.label}>
-                {option.label}
+              <Select.OptionItem key={option.value} value={option.value} name={option.name}>
+                {option.name}
               </Select.OptionItem>
             );
           })}

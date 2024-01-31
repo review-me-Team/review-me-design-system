@@ -8,7 +8,6 @@ import OptionList from './OptionList';
 import { Option } from './Select.types';
 import { SelectLayout } from './style';
 import TriggerButton from './TriggerButton';
-import TriggerInput from './TriggerInput';
 
 interface Props {
   defaultOption?: Option;
@@ -28,7 +27,6 @@ const Select = ({ defaultOption, onSelectOption, width = '100%', children }: Pro
 };
 
 Select.TriggerButton = TriggerButton;
-Select.TriggerInput = TriggerInput;
 Select.OptionList = OptionList;
 Select.OptionItem = OptionItem;
 

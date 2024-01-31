@@ -1,8 +1,10 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { RefObject, createContext, useContext, useRef, useState } from 'react';
 
 interface SelectContextType {
-  isOpen?: boolean;
+  isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
+  triggerRef: RefObject<HTMLElement>;
+  listRef: RefObject<HTMLUListElement>;
 }
 
 export const SelectContext = createContext<SelectContextType | null>(null);
@@ -23,8 +25,12 @@ interface SelectProviderType {
 
 export const SelectProvider = ({ children }: SelectProviderType) => {
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
 
   return (
-    <SelectContext.Provider value={{ isOpen, onOpenChange: setIsOpen }}>{children}</SelectContext.Provider>
+    <SelectContext.Provider value={{ isOpen, onOpenChange: setIsOpen, triggerRef, listRef }}>
+      {children}
+    </SelectContext.Provider>
   );
 };
