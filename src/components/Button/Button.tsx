@@ -1,18 +1,17 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react';
+import React, { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 
 import { ButtonLayout } from './style';
 
 type variant = 'default' | 'outline' | 'ghost';
 type size = 's' | 'm' | 'l';
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends ComponentPropsWithoutRef<'button'> {
   variant: variant;
   size: size;
   width?: string;
-  children: ReactNode;
 }
 
-const Button = ({ variant, size, width, children, ...props }: Props) => {
+const Button = ({ variant, size, width, children, ...props }: PropsWithChildren<Props>) => {
   return (
     <ButtonLayout $variant={variant} size={size} $width={width} {...props}>
       {children}
