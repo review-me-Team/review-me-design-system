@@ -2,16 +2,16 @@ import React, { forwardRef } from 'react';
 
 import { useOptionContext } from '@contexts/OptionContext';
 
-import { Label, Value } from './Select.types';
+import { Name, Value } from './Select.types';
 import { OptionItem as OptionItemLayout } from './style';
 
 export interface Props {
   value: Value;
-  label: Label;
+  name: Name;
   children: React.ReactNode;
 }
 
-const OptionItem = forwardRef<HTMLLIElement, Props>(({ value, label, children }, ref) => {
+const OptionItem = forwardRef<HTMLLIElement, Props>(({ value, name, children }, ref) => {
   const { selectedOption, onSelectOption } = useOptionContext();
 
   return (
@@ -19,7 +19,7 @@ const OptionItem = forwardRef<HTMLLIElement, Props>(({ value, label, children },
       ref={ref}
       value={value}
       $isSelected={selectedOption?.value === value}
-      onMouseDown={() => onSelectOption({ value, label })}
+      onMouseDown={() => onSelectOption({ value, name })}
     >
       {children}
     </OptionItemLayout>

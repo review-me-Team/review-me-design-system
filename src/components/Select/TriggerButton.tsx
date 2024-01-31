@@ -10,10 +10,10 @@ import Icon from '@components/Icon/Icon';
 import { TriggerButton as TriggerButtonLayout, SelectedValue } from './style';
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  placeholder?: string;
+  label?: string;
 }
 
-const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ placeholder }, ref) => {
+const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label }, ref) => {
   const { isOpen, onOpenChange, triggerRef } = useSelectContext();
   const { selectedOption } = useOptionContext();
 
@@ -26,7 +26,7 @@ const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ placeholder }, ref
         onOpenChange(!isOpen);
       }}
     >
-      <SelectedValue>{selectedOption?.label ?? placeholder ?? ''}</SelectedValue>
+      <SelectedValue>{selectedOption?.name ?? label ?? ''}</SelectedValue>
       {isOpen ? <Icon iconName="upArrow" /> : <Icon iconName="downArrow" />}
     </TriggerButtonLayout>
   );
