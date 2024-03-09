@@ -29,12 +29,12 @@ const SelectedValue = styled.span`
   ${({ theme }) => theme.font.body.default}
 `;
 
-const OptionList = styled.ul<{ maxHeight?: string }>`
+const OptionList = styled.ul<{ $maxHeight?: string }>`
   display: flex;
   flex-direction: column;
   width: 100%;
   min-width: 5.625rem;
-  max-height: ${({ maxHeight }) => maxHeight ?? 'none'};
+  max-height: ${({ $maxHeight }) => $maxHeight ?? 'none'};
   position: absolute;
   top: calc(100% + 0.5rem);
   z-index: ${({ theme }) => theme.zIndex.floating};
