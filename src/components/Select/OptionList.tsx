@@ -18,7 +18,7 @@ const OptionList = ({ children, maxHeight }: PropsWithChildren<Props>) => {
   if (!isOpen) return null;
 
   return (
-    <OptionListLayout ref={listRef} maxHeight={maxHeight} onClick={() => onOpenChange(false)}>
+    <OptionListLayout ref={listRef} $maxHeight={maxHeight} onClick={() => onOpenChange(false)}>
       {children}
     </OptionListLayout>
   );
