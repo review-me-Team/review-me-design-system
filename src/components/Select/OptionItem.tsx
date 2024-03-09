@@ -16,7 +16,6 @@ const OptionItem = forwardRef<HTMLLIElement, PropsWithChildren<Props>>(({ value,
   return (
     <OptionItemLayout
       ref={ref}
-      value={value}
       $isSelected={selectedOption?.value === value}
       onMouseDown={() => onSelectOption({ value, name })}
     >
