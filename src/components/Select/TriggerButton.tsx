@@ -16,7 +16,7 @@ export interface Props extends ComponentPropsWithRef<'button'> {
 
 const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label, height = 'fit-content' }, ref) => {
   const { isOpen, onOpenChange, triggerRef } = useSelectContext();
-  const { selectedOption } = useOptionContext();
+  const { selectedOptionName } = useOptionContext();
 
   const buttonRef = useSyncRef(triggerRef, ref);
 
@@ -28,7 +28,7 @@ const TriggerButton = forwardRef<HTMLButtonElement, Props>(({ label, height = 'f
         onOpenChange(!isOpen);
       }}
     >
-      <SelectedValue>{`${selectedOption?.name ?? label ?? ''}`}</SelectedValue>
+      <SelectedValue>{`${selectedOptionName ?? label ?? ''}`}</SelectedValue>
       {isOpen ? <Icon iconName="upArrow" /> : <Icon iconName="downArrow" />}
     </TriggerButtonLayout>
   );

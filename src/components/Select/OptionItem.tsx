@@ -1,29 +1,28 @@
-import React, { ComponentPropsWithRef, PropsWithChildren, forwardRef } from 'react';
+import React, { ComponentPropsWithRef } from 'react';
 
 import { useOptionContext } from '@contexts/OptionContext';
 
-import { Name, Value } from './Select.types';
+import { Value } from './Select.types';
 import { OptionItem as OptionItemLayout } from './style';
 
 export interface Props extends ComponentPropsWithRef<'li'> {
   value: Value;
-  name: Name;
 }
 
-const OptionItem = forwardRef<HTMLLIElement, PropsWithChildren<Props>>(({ value, name, children }, ref) => {
-  const { selectedOption, onSelectOption } = useOptionContext();
+const OptionItem = ({ value, children }: Props) => {
+  const { selectedOption, onSelectOption, setListItemsRef } = useOptionContext();
 
   return (
     <OptionItemLayout
-      ref={ref}
+      ref={setListItemsRef}
       value={value}
       $isSelected={selectedOption?.value === value}
-      onMouseDown={() => onSelectOption({ value, name })}
+      onMouseDown={() => onSelectOption({ value })}
     >
       {children}
     </OptionItemLayout>
   );
-});
+};
 
 OptionItem.displayName = 'OptionItem';
 
