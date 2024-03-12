@@ -1,10 +1,12 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { RefCallback, createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { Option } from '@components/Select/Select.types';
 
 interface OptionContextType {
   selectedOption?: Option;
   onSelectOption: (option?: Option) => void;
+  selectedOptionName: string;
+  setListItemsRef: RefCallback<HTMLLIElement>;
 }
 
 export const OptionContext = createContext<OptionContextType | null>(null);
@@ -26,6 +28,30 @@ interface OptionProviderType {
 
 const OptionProvider = ({ store, children }: OptionProviderType) => {
   const [selectedOption, setSelectedOption] = useState<Option | undefined>(store.defaultOption);
+  const [selectedOptionName, setSelectedOptionName] = useState<string>('');
+  const listItemsRef = useRef<Map<string | number, HTMLLIElement> | null>(null);
+
+  function getListItemsRef() {
+    if (!listItemsRef.current) {
+      listItemsRef.current = new Map();
+    }
+
+    return listItemsRef.current;
+  }
+
+  const setListItemsRef: RefCallback<HTMLLIElement> = (node) => {
+    const map = getListItemsRef();
+    const hasValue = node?.getAttribute('value');
+
+    if (node && hasValue) {
+      map.set(node.getAttribute('value') || '', node);
+    }
+  };
+
+  useEffect(() => {
+    const selectedOptionName = listItemsRef.current?.get(selectedOption?.value ?? '')?.textContent ?? '';
+    setSelectedOptionName(selectedOptionName);
+  }, [selectedOption]);
 
   return (
     <OptionContext.Provider
@@ -35,6 +61,8 @@ const OptionProvider = ({ store, children }: OptionProviderType) => {
           setSelectedOption(option);
           if (store.onSelectOption) store.onSelectOption(option);
         },
+        selectedOptionName,
+        setListItemsRef,
       }}
     >
       {children}
