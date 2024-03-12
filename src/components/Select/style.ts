@@ -29,8 +29,8 @@ const SelectedValue = styled.span`
   ${({ theme }) => theme.font.body.default}
 `;
 
-const OptionList = styled.ul<{ $maxHeight?: string }>`
-  display: flex;
+const OptionList = styled.ul<{ $maxHeight?: string; $isOpen: boolean }>`
+  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
   flex-direction: column;
   width: 100%;
   min-width: 5.625rem;

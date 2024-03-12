@@ -15,10 +15,13 @@ const OptionList = ({ children, maxHeight }: PropsWithChildren<Props>) => {
 
   useOutsideClick({ listRef, triggerRef, isOpen, onClick: () => onOpenChange(false) });
 
-  if (!isOpen) return null;
-
   return (
-    <OptionListLayout ref={listRef} $maxHeight={maxHeight} onClick={() => onOpenChange(false)}>
+    <OptionListLayout
+      ref={listRef}
+      $maxHeight={maxHeight}
+      $isOpen={isOpen}
+      onClick={() => onOpenChange(false)}
+    >
       {children}
     </OptionListLayout>
   );
