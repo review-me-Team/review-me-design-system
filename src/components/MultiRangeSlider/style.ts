@@ -62,7 +62,7 @@ const Track = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${theme.palette.grey400};
+  background-color: ${theme.palette.gray400};
   border-radius: 0.5rem;
 
   z-index: 1;
