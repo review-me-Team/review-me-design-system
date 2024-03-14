@@ -49,7 +49,10 @@ const OptionProvider = ({ store, children }: OptionProviderType) => {
   };
 
   useEffect(() => {
-    const selectedOptionName = listItemsRef.current?.get(selectedOption?.value ?? '')?.textContent ?? '';
+    if (selectedOption === undefined) return;
+
+    const selectedOptionName = getListItemsRef().get(selectedOption)?.textContent || '';
+
     setSelectedOptionName(selectedOptionName);
   }, [selectedOption]);
 

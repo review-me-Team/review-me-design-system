@@ -2,22 +2,22 @@ import React, { ComponentPropsWithRef } from 'react';
 
 import { useOptionContext } from '@contexts/OptionContext';
 
-import { Value } from './Select.types';
+import { Option } from './Select.types';
 import { OptionItem as OptionItemLayout } from './style';
 
 export interface Props extends ComponentPropsWithRef<'li'> {
-  value: Value;
+  option: Option;
 }
 
-const OptionItem = ({ value, children }: Props) => {
+const OptionItem = ({ option, children }: Props) => {
   const { selectedOption, onSelectOption, setListItemsRef } = useOptionContext();
 
   return (
     <OptionItemLayout
       ref={setListItemsRef}
-      value={value}
-      $isSelected={selectedOption?.value === value}
-      onMouseDown={() => onSelectOption({ value })}
+      value={option}
+      $isSelected={selectedOption === option}
+      onMouseDown={() => onSelectOption(option)}
     >
       {children}
     </OptionItemLayout>

@@ -11,8 +11,7 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   argTypes: {
     defaultOption: {
-      description: '기본으로 선택된 option입니다. (value: option의 value)',
-      control: 'object',
+      description: '기본으로 선택된 option입니다.',
     },
     onSelectOption: {
       description: 'option을 선택했을 때의 handler입니다.',
@@ -41,24 +40,24 @@ type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
   render: () => {
-    const [, setSelectedOption] = useState<{ value: string } | undefined>();
+    const [, setSelectedOption] = useState<string | undefined>();
     const options = [
-      { value: 'apple', name: '사과' },
-      { value: 'graph', name: '포도' },
-      { value: 'banana', name: '바나나' },
+      { id: 'apple', name: '사과' },
+      { id: 'graph', name: '포도' },
+      { id: 'banana', name: '바나나' },
     ];
 
     return (
       <Select
         onSelectOption={(option) => {
-          if (option && typeof option.value === 'string') setSelectedOption({ value: option.value });
+          if (option && typeof option === 'string') setSelectedOption(option);
         }}
       >
         <Select.TriggerButton />
         <Select.OptionList>
           {options.map((option) => {
             return (
-              <Select.OptionItem key={option.value} value={option.value}>
+              <Select.OptionItem key={option.id} option={option.id}>
                 {option.name}
               </Select.OptionItem>
             );
@@ -78,26 +77,26 @@ export const DefaultOption: Story = {
     },
   },
   render: () => {
-    const [, setSelectedOption] = useState<{ value: string } | undefined>();
     const options = [
       { value: 'apple', name: '사과' },
       { value: 'graph', name: '포도' },
       { value: 'banana', name: '바나나' },
     ];
     const defaultOption = options[1];
+    const [, setSelectedOption] = useState<string | undefined>(defaultOption.value);
 
     return (
       <Select
-        defaultOption={defaultOption}
+        defaultOption={defaultOption.value}
         onSelectOption={(option) => {
-          if (option && typeof option.value === 'string') setSelectedOption({ value: option.value });
+          if (option && typeof option === 'string') setSelectedOption(option);
         }}
       >
         <Select.TriggerButton />
         <Select.OptionList>
           {options.map((option) => {
             return (
-              <Select.OptionItem key={option.value} value={option.value}>
+              <Select.OptionItem key={option.value} option={option.value}>
                 {option.name}
               </Select.OptionItem>
             );
