@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LeftValue, MultiRangeSliderLayout, Range, RightValue, Slider, Thumb, Track } from './style';
+import { MinValue, MultiRangeSliderLayout, Range, MaxValue, Slider, Thumb, Track } from './style';
 
 interface Range {
   min: number;
@@ -71,10 +71,8 @@ const MultiRangeSlider = ({
       <Slider>
         <Track />
         <Range $left={`${minPercent}%`} $width={`${maxPercent - minPercent}%`} />
-        <LeftValue $left={`${minPercent}%`}>{hasLessCheck ? `${range.min}-` : range.min}</LeftValue>
-        <RightValue $right={`${100 - maxPercent}%`}>
-          {hasGreaterCheck ? `${range.max}+` : range.max}
-        </RightValue>
+        <MinValue>{hasLessCheck ? `${min}-` : min}</MinValue>
+        <MaxValue>{hasGreaterCheck ? `${max}+` : max}</MaxValue>
       </Slider>
     </MultiRangeSliderLayout>
   );

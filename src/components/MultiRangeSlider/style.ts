@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { theme } from '@styles/theme';
 
-const THUMB_SIZE = 2;
+const THUMB_SIZE = 1.75;
 const THUMB_TOP = -0.75;
 
 const MultiRangeSliderLayout = styled.div<{ $width?: string }>`
@@ -14,8 +14,13 @@ const thumbStyles = css`
   width: ${THUMB_SIZE}rem;
   height: ${THUMB_SIZE}rem;
 
+  background-color: ${theme.color.neutral.bg.default};
+  border: 2px solid ${theme.color.accent.bd.strong};
+  border-radius: 50%;
+
   &:active {
     cursor: grabbing;
+    outline: blue;
   }
 `;
 
@@ -27,11 +32,12 @@ const Thumb = styled.input`
 
   // 기본 스타일 초기화
   -webkit-appearance: none;
+  -moz-appearance: none;
   // 가려진 input 이벤트 비활성화
   pointer-events: none;
+  background: none;
 
   z-index: 2;
-  opacity: 0;
 
   &::-webkit-slider-thumb {
     // thumb 스타일 초기화
@@ -43,6 +49,7 @@ const Thumb = styled.input`
     ${thumbStyles}
   }
   &::-moz-range-thumb {
+    -moz-appearance: none;
     pointer-events: all;
     cursor: pointer;
 
@@ -77,19 +84,14 @@ const Range = styled.div<{ $left: string; $width: string }>`
   bottom: 0;
 
   background-color: ${theme.color.accent.bg.strong};
+  border-radius: 0.5rem;
 
   z-index: 2;
 `;
 
 const valueStyles = css`
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: ${theme.color.neutral.bg.default};
-  border: 2px solid ${theme.color.accent.bd.strong};
-  border-radius: 50%;
+  top: 1rem;
 
   ${theme.font.body.default}
   color: ${theme.color.neutral.text.default};
@@ -98,22 +100,14 @@ const valueStyles = css`
   z-index: 3;
 `;
 
-const LeftValue = styled.div<{ $left: string }>`
+const MinValue = styled.div`
   ${valueStyles}
-  top: ${THUMB_TOP}rem;
-  left: ${({ $left }) => $left};
-  transform: translateX(-50%);
-
-  ${thumbStyles}
+  left: 0;
 `;
 
-const RightValue = styled.div<{ $right: string }>`
+const MaxValue = styled.div`
   ${valueStyles}
-  top: ${THUMB_TOP}rem;
-  right: ${({ $right }) => $right};
-  transform: translateX(50%);
-
-  ${thumbStyles}
+  right: 0;
 `;
 
-export { MultiRangeSliderLayout, Thumb, Slider, Track, Range, LeftValue, RightValue };
+export { MultiRangeSliderLayout, Thumb, Slider, Track, Range, MinValue, MaxValue };
