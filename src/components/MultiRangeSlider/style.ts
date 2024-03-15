@@ -23,6 +23,7 @@ const Thumb = styled.input`
   position: absolute;
   width: 100%;
   top: ${THUMB_TOP}rem;
+  left: 0;
 
   // 기본 스타일 초기화
   -webkit-appearance: none;
