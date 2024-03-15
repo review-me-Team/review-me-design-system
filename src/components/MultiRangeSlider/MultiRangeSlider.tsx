@@ -71,8 +71,8 @@ const MultiRangeSlider = ({
       <Slider>
         <Track />
         <Range $left={`${minPercent}%`} $width={`${maxPercent - minPercent}%`} />
-        <MinValue>{hasLessCheck ? `${min}-` : min}</MinValue>
-        <MaxValue>{hasGreaterCheck ? `${max}+` : max}</MaxValue>
+        <MinValue>{hasLessCheck ? `${min} -` : min}</MinValue>
+        <MaxValue>{hasGreaterCheck ? `${max} +` : max}</MaxValue>
       </Slider>
     </MultiRangeSliderLayout>
   );
