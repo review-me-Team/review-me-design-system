@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LeftValue, MultiRangeSliderLayout, Range, RightValue, Slider, Thumb, Track } from './style';
+import { MinValue, MultiRangeSliderLayout, Range, MaxValue, Slider, Thumb, Track } from './style';
 
 interface Range {
   min: number;
@@ -14,9 +14,20 @@ interface Props {
   step?: number;
   range: Range;
   onRangeChange: ({ min, max }: Range) => void;
+  hasGreaterCheck?: boolean;
+  hasLessCheck?: boolean;
 }
 
-const MultiRangeSlider = ({ width, min, max, step = 1, range, onRangeChange }: Props) => {
+const MultiRangeSlider = ({
+  width,
+  min,
+  max,
+  step = 1,
+  range,
+  onRangeChange,
+  hasGreaterCheck,
+  hasLessCheck,
+}: Props) => {
   const getPercent = (value: number) => {
     return Math.round(((value - min) / (max - min)) * 100);
   };
@@ -60,8 +71,8 @@ const MultiRangeSlider = ({ width, min, max, step = 1, range, onRangeChange }: P
       <Slider>
         <Track />
         <Range $left={`${minPercent}%`} $width={`${maxPercent - minPercent}%`} />
-        <LeftValue $left={`${minPercent}%`}>{range.min}</LeftValue>
-        <RightValue $right={`${100 - maxPercent}%`}>{range.max}</RightValue>
+        <MinValue>{hasLessCheck ? `${min} -` : min}</MinValue>
+        <MaxValue>{hasGreaterCheck ? `${max} +` : max}</MaxValue>
       </Slider>
     </MultiRangeSliderLayout>
   );
