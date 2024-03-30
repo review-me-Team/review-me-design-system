@@ -13,6 +13,7 @@ import Label from '@components/Label/Label';
 import Modal from '@components/Modal/Modal';
 import MultiRangeSlider from '@components/MultiRangeSlider/MultiRangeSlider';
 import Select from '@components/Select/Select';
+import Switch from '@components/Switch/Switch';
 import Textarea from '@components/Textarea/Textarea';
 
 /** provider */
@@ -30,5 +31,6 @@ export {
   Modal,
   MultiRangeSlider,
   Select,
+  Switch,
   Textarea,
 };
