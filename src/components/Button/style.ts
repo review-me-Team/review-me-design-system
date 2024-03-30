@@ -49,6 +49,13 @@ const ButtonLayout = styled.button<{
   overflow: hidden;
   width: fit-content;
 
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
   ${({ theme, size }) => {
     switch (size) {
       case 's':
