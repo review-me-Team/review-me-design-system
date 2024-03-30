@@ -5,9 +5,12 @@ import CheckMark from '@assets/CheckMark.svg';
 import Clip from '@assets/Clip.svg';
 import Communication from '@assets/Communication.svg';
 import DownArrow from '@assets/DownArrow.svg';
+import Download from '@assets/Download.svg';
 import Emoji from '@assets/Emoji.svg';
 import FilledBookMark from '@assets/FilledBookMark.svg';
 import FilledCheckMark from '@assets/FilledCheckMark.svg';
+import FilledInfo from '@assets/FilledInfo.svg';
+import Info from '@assets/Info.svg';
 import LeftArrow from '@assets/LeftArrow.svg';
 import Menu from '@assets/Menu.svg';
 import Minus from '@assets/Minus.svg';
@@ -24,10 +27,13 @@ const ICON_NAME = {
   CLIP: 'clip',
   COMMUNICATION: 'communication',
   DOWN_ARROW: 'downArrow',
+  DOWNLOAD: 'download',
   EMOJI: 'emoji',
   FILLED_BOOK_MARK: 'filledBookMark',
   FILLED_CHECK_MARK: 'filledCheckMark',
+  FILLED_INFO: 'filledInfo',
   LEFT_ARROW: 'leftArrow',
+  INFO: 'info',
   MENU: 'menu',
   MINUS: 'minus',
   MORE: 'more',
@@ -44,10 +50,13 @@ const IconComponents = {
   [ICON_NAME.CLIP]: Clip,
   [ICON_NAME.COMMUNICATION]: Communication,
   [ICON_NAME.DOWN_ARROW]: DownArrow,
+  [ICON_NAME.DOWNLOAD]: Download,
   [ICON_NAME.EMOJI]: Emoji,
   [ICON_NAME.FILLED_BOOK_MARK]: FilledBookMark,
   [ICON_NAME.FILLED_CHECK_MARK]: FilledCheckMark,
+  [ICON_NAME.FILLED_INFO]: FilledInfo,
   [ICON_NAME.LEFT_ARROW]: LeftArrow,
+  [ICON_NAME.INFO]: Info,
   [ICON_NAME.MENU]: Menu,
   [ICON_NAME.MINUS]: Minus,
   [ICON_NAME.MORE]: More,
