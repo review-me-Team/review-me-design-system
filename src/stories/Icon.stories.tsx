@@ -73,6 +73,10 @@ export const IconNames: Story = {
             <h3>more</h3>
             <Icon iconName="more" width={width} height={height} color={color} />
           </ComponentListItem>
+          <ComponentListItem direction="column">
+            <h3>download</h3>
+            <Icon iconName="download" width={width} height={height} color={color} />
+          </ComponentListItem>
         </ComponentList>
 
         <ComponentList direction="row">
@@ -91,6 +95,14 @@ export const IconNames: Story = {
           <ComponentListItem direction="column">
             <h3>filledCheckMark</h3>
             <Icon iconName="filledCheckMark" width={width} height={height} color={color} />
+          </ComponentListItem>
+          <ComponentListItem direction="column">
+            <h3>info</h3>
+            <Icon iconName="info" width={width} height={height} color={color} />
+          </ComponentListItem>
+          <ComponentListItem direction="column">
+            <h3>filledInfo</h3>
+            <Icon iconName="filledInfo" width={width} height={height} color={color} />
           </ComponentListItem>
         </ComponentList>
 
