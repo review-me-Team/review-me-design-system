@@ -2,7 +2,7 @@
 
 This is a shared component library incorporating Review Me's design system. Before getting started, please refer to the Storybook link below.
 
-[storybook](https://657865daa80aa78e381921ae-bnstoadwwv.chromatic.com/?path=/story/button--default)
+[storybook](https://657865daa80aa78e381921ae-wabteemmnr.chromatic.com/?path=/docs/button--docs)
 
 ## Installation
 
