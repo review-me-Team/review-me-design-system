@@ -21,16 +21,14 @@ const Modal = ({
   height = 'fit-content',
   padding = '1.25rem',
 }: Props) => {
+  if (!isOpen) return null;
+
   return createPortal(
     <>
-      {isOpen && (
-        <>
-          <ModalLayout $width={width} $height={height} $padding={padding}>
-            {children}
-          </ModalLayout>
-          <BackDrop onClick={onClose} />
-        </>
-      )}
+      <ModalLayout $width={width} $height={height} $padding={padding}>
+        {children}
+      </ModalLayout>
+      <BackDrop onClick={onClose} />
     </>,
     document.getElementById(modalRootId) as HTMLElement,
   );
