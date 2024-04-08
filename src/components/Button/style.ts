@@ -3,35 +3,53 @@ import styled, { css } from 'styled-components';
 const defaultButtonStyle = css`
   background-color: ${({ theme }) => theme.color.accent.bg.default};
   border: 0.0625rem solid transparent;
-  border-radius: 0.75rem;
 
   color: ${({ theme }) => theme.color.neutral.text.weak};
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     opacity: 0.9;
     border: 0.0625rem solid ${({ theme }) => theme.palette.green200};
   }
-  transition: all 0.2s ease-in-out;
+  &:disabled {
+    border: 0.0625rem solid transparent;
+    transition: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
 `;
 
 const outlineButtonStyle = css`
   background-color: ${({ theme }) => theme.color.neutral.bg.default};
   border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.strong};
-  border-radius: 0.75rem;
 
   color: ${({ theme }) => theme.color.accent.text.strong};
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     opacity: 0.9;
     background-color: ${({ theme }) => theme.palette.green100};
   }
-  transition: all 0.2s ease-in-out;
+  &:disabled {
+    background-color: ${({ theme }) => theme.color.neutral.bg.default};
+    border: 0.0625rem solid ${({ theme }) => theme.color.accent.bd.strong};
+    opacity: 0.7;
+    cursor: not-allowed;
+    transition: none;
+  }
 `;
 
 const ghostButtonStyle = css`
   background-color: transparent;
 
   color: ${({ theme }) => theme.color.accent.text.strong};
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
 `;
 
 type variant = 'default' | 'outline' | 'ghost';
@@ -49,12 +67,9 @@ const ButtonLayout = styled.button<{
   overflow: hidden;
   width: fit-content;
 
-  cursor: pointer;
+  border-radius: 0.75rem;
 
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
+  cursor: pointer;
 
   ${({ theme, size }) => {
     switch (size) {
