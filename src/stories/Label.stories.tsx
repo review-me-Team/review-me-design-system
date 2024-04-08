@@ -17,9 +17,6 @@ const meta: Meta<typeof Label> = {
       description: '라벨에 들어갈 컨텐츠를 표시합니다.',
       control: 'text',
     },
-    onClick: {
-      description: 'click event가 발생했을 때 호출할 handler 입니다.',
-    },
     px: {
       description: '라벨의 padding-left, padding-right 값을 지정합니다. (단위 필수)',
       control: 'text',
@@ -35,17 +32,7 @@ export default meta;
 
 type Story = StoryObj<typeof Label>;
 
-export const WithoutClickHandler: Story = {
-  render: ({ isActive, px, py }) => {
-    return (
-      <Label isActive={isActive} px={px} py={py}>
-        Label
-      </Label>
-    );
-  },
-};
-
-export const WithClickHandler: Story = {
+export const Default: Story = {
   render: ({ isActive, px, py }) => {
     return (
       <Label isActive={isActive} onClick={() => console.log('click!')} px={px} py={py}>
