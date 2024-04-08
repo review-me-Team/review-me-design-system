@@ -19,6 +19,9 @@ const StyledInput = styled.input<{ $isValid: boolean }>`
     border: 1px solid ${({ theme }) => theme.color.accent.bd.strong};
     color: ${({ theme }) => theme.color.neutral.text.default};
   }
+  &:focus-visible {
+    outline: none;
+  }
 `;
 
 export { StyledInput };

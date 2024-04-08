@@ -15,13 +15,17 @@ const thumbStyles = css`
   height: ${THUMB_SIZE}rem;
 
   background-color: ${theme.color.neutral.bg.default};
-  border: 2px solid ${theme.color.accent.bd.strong};
+  border: 0.125rem solid ${theme.color.accent.bd.strong};
   border-radius: 50%;
 
   &:active {
     cursor: grabbing;
-    outline: blue;
   }
+`;
+
+const thumbFocusStyles = css`
+  outline-offset: 0.125rem;
+  outline: 0.125rem solid ${theme.color.accent.bd.weak};
 `;
 
 const Thumb = styled.input`
@@ -39,6 +43,12 @@ const Thumb = styled.input`
 
   z-index: 2;
 
+  &:focus {
+    outline: none;
+  }
+  &:focus::-webkit-slider-thumb {
+    ${thumbFocusStyles}
+  }
   &::-webkit-slider-thumb {
     // thumb 스타일 초기화
     -webkit-appearance: none;
@@ -47,6 +57,10 @@ const Thumb = styled.input`
     cursor: pointer;
 
     ${thumbStyles}
+  }
+
+  &:focus::-moz-range-thumb {
+    ${thumbFocusStyles}
   }
   &::-moz-range-thumb {
     -moz-appearance: none;
