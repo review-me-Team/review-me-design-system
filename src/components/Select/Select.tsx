@@ -1,32 +1,19 @@
-import React, { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
 
-import OptionProvider from '@contexts/OptionContext';
-import { SelectProvider } from '@contexts/SelectContext';
-
-import OptionItem from './OptionItem';
-import OptionList from './OptionList';
-import { Option } from './Select.types';
 import { SelectLayout } from './style';
-import TriggerButton from './TriggerButton';
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
-  defaultOption?: Option;
-  onSelectOption?: (option?: Option) => void;
+interface Props extends ComponentPropsWithoutRef<'select'> {
   width?: string;
 }
 
-const Select = ({ defaultOption, onSelectOption, width = '100%', children }: PropsWithChildren<Props>) => {
+const Select = forwardRef<HTMLSelectElement, Props>(({ width = '100%', children, ...props }, ref) => {
   return (
-    <SelectProvider>
-      <OptionProvider store={{ defaultOption, onSelectOption }}>
-        <SelectLayout $width={width}>{children}</SelectLayout>
-      </OptionProvider>
-    </SelectProvider>
+    <SelectLayout ref={ref} $width={width} {...props}>
+      {children}
+    </SelectLayout>
   );
-};
+});
 
-Select.TriggerButton = TriggerButton;
-Select.OptionList = OptionList;
-Select.OptionItem = OptionItem;
+Select.displayName = 'Select';
 
 export default Select;
