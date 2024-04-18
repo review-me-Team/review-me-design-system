@@ -52,4 +52,4 @@ yarn add review-me-design-system
 
 [npm](https://www.npmjs.com/package/review-me-design-system)
 
-[storybook](https://657865daa80aa78e381921ae-bxkxuxcauc.chromatic.com/?path=/docs/button--docs)
+[storybook](https://657865daa80aa78e381921ae-vheoxvybtl.chromatic.com/?path=/docs/button--docs)
