@@ -16,7 +16,7 @@ const meta: Meta<typeof Modal> = {
       description: '모달이 현재 표시되고 있는지 여부를 나타냅니다.',
     },
     modalRootId: {
-      description: '모달이 위치할 element의 id를 적어주세요.',
+      description: '모달이 위치할 element의 id를 적어주세요. (기본값은 body에 위치합니다.)',
     },
     children: {
       description: '모달의 컨텐츠를 설정합니다.',
@@ -38,10 +38,7 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
-  argTypes: {
-    modalRootId: { control: { disable: true } },
-  },
-  render: ({ width, height, padding }) => {
+  render: ({ width, height, padding, modalRootId }) => {
     const { isOpen, open, close } = useModal();
 
     return (
@@ -52,7 +49,7 @@ export const Default: Story = {
         <Modal
           isOpen={isOpen}
           onClose={close}
-          modalRootId="modal-root"
+          modalRootId={modalRootId}
           width={width}
           height={height}
           padding={padding}

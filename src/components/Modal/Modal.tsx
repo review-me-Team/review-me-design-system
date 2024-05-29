@@ -6,7 +6,7 @@ import { BackDrop, Description, ModalLayout, ModalWrapper, Title } from './style
 interface Props extends ComponentPropsWithoutRef<'div'> {
   isOpen: boolean;
   onClose: React.MouseEventHandler<HTMLElement>;
-  modalRootId: string;
+  modalRootId?: string;
   width?: string;
   height?: string;
   padding?: string;
@@ -39,7 +39,7 @@ const Modal = ({
         </ModalLayout>
       </ModalWrapper>
     </BackDrop>,
-    document.getElementById(modalRootId) as HTMLElement,
+    modalRootId ? (document.getElementById(modalRootId) as HTMLElement) : document.body,
   );
 };
 
