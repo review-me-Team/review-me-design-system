@@ -2,7 +2,7 @@
 
 This is a shared component library incorporating Review Me's design system. Before getting started, please refer to the Storybook link below.
 
-[storybook](https://657865daa80aa78e381921ae-dzalkrtwoi.chromatic.com/?path=/docs/button--docs)
+[storybook](https://657865daa80aa78e381921ae-bbsvrzefbb.chromatic.com/?path=/docs/button--docs)
 
 ## Installation
 
@@ -52,4 +52,4 @@ yarn add review-me-design-system
 
 [npm](https://www.npmjs.com/package/review-me-design-system)
 
-[storybook](https://657865daa80aa78e381921ae-vheoxvybtl.chromatic.com/?path=/docs/button--docs)
+[storybook](https://657865daa80aa78e381921ae-bbsvrzefbb.chromatic.com/?path=/docs/button--docs)
