@@ -1,3 +1,6 @@
+/** hooks */
+import useModal from '@hooks/useModal';
+
 /** styles */
 import { GlobalStyle } from '@styles/GlobalStyle';
 import { theme } from '@styles/theme';
@@ -18,6 +21,7 @@ import ReviewMeProvider from './ReviewMeProvider';
 
 export {
   ReviewMeProvider,
+  useModal,
   GlobalStyle,
   theme,
   Button,
