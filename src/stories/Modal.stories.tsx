@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import React from 'react';
-
-import useModal from '@hooks/useModal';
+import React, { useState } from 'react';
 
 import Button from '@components/Button/Button';
 import Modal from '@components/Modal/Modal';
@@ -39,24 +37,33 @@ type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   render: ({ width, height, padding, modalRootId }) => {
-    const { isOpen, open, close } = useModal();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
       <>
-        <Button variant="default" size="m" onClick={open}>
+        <Button variant="default" size="m" onClick={() => setIsOpen(true)}>
           open
         </Button>
         <Modal
           isOpen={isOpen}
-          onClose={close}
+          onClose={() => setIsOpen(false)}
           modalRootId={modalRootId}
           width={width}
           height={height}
           padding={padding}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
             <Modal.Title>title</Modal.Title>
             <Modal.Description>description</Modal.Description>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem' }}>
+            <Button variant="default" size="m" onClick={() => setIsOpen(false)}>
+              close
+            </Button>
+            <Button variant="outline" size="m" onClick={() => console.log('wow')}>
+              wow
+            </Button>
           </div>
         </Modal>
       </>
