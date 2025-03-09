@@ -8,7 +8,7 @@
   "browser": "./browser/specific/main.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "rm -rf dist && mkdir dist && webpack --config webpack.prod.js && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias",
+    "build": "webpack --config webpack.prod.js && tsc && rm -rf ./dist/stories && cp -r ./src/assets ./dist && tsc-alias",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -51,7 +51,6 @@
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
     "chromatic": "^10.1.0",
-    "clean-webpack-plugin": "^4.0.0",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
