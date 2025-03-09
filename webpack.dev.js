@@ -1,7 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -10,10 +9,5 @@ module.exports = merge(common, {
     hot: true,
     historyApiFallback: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-    new CleanWebpackPlugin(),
-  ],
+  plugins: [new CleanWebpackPlugin()],
 });
