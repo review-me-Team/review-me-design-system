@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-import { theme } from '@styles/theme';
-
 const SwitchLabel = styled.label`
   display: flex;
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
 
-  ${theme.font.body.default}
+  ${({ theme }) => theme.font.body.default}
 
   [type='checkbox'] {
     appearance: none;
@@ -16,7 +14,7 @@ const SwitchLabel = styled.label`
     width: 2.25em;
     height: 1.25em;
 
-    border: max(0.125rem, 0.1em) solid ${theme.palette.gray500};
+    border: max(0.125rem, 0.1em) solid ${({ theme }) => theme.palette.gray500};
     border-radius: 1.25em;
 
     cursor: pointer;
@@ -31,7 +29,7 @@ const SwitchLabel = styled.label`
     height: 1em;
 
     border-radius: 50%;
-    background-color: ${theme.palette.gray500};
+    background-color: ${({ theme }) => theme.palette.gray500};
 
     transform: scale(0.8);
     transition: left 250ms linear;
@@ -42,13 +40,13 @@ const SwitchLabel = styled.label`
     left: 1em;
   }
   [type='checkbox']:checked {
-    background-color: ${theme.palette.green500};
-    border-color: ${theme.palette.green500};
+    background-color: ${({ theme }) => theme.palette.green500};
+    border-color: ${({ theme }) => theme.palette.green500};
   }
 
   [type='checkbox']:focus-visible {
     outline-offset: max(0.125rem, 0.1em);
-    outline: max(0.125rem, 0.1em) solid ${theme.palette.green500};
+    outline: max(0.125rem, 0.1em) solid ${({ theme }) => theme.palette.green500};
   }
 `;
 
