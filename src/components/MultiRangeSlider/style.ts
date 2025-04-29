@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { theme } from '@styles/theme';
-
 const THUMB_SIZE = 1.75;
 const THUMB_TOP = -0.75;
 
@@ -14,8 +12,8 @@ const thumbStyles = css`
   width: ${THUMB_SIZE}rem;
   height: ${THUMB_SIZE}rem;
 
-  background-color: ${theme.color.neutral.bg.default};
-  border: 0.125rem solid ${theme.color.accent.bd.strong};
+  background-color: ${({ theme }) => theme.color.neutral.bg.default};
+  border: 0.125rem solid ${({ theme }) => theme.color.accent.bd.strong};
   border-radius: 50%;
 
   &:active {
@@ -25,7 +23,7 @@ const thumbStyles = css`
 
 const thumbFocusStyles = css`
   outline-offset: 0.125rem;
-  outline: 0.125rem solid ${theme.color.accent.bd.weak};
+  outline: 0.125rem solid ${({ theme }) => theme.color.accent.bd.weak};
 `;
 
 const Thumb = styled.input`
@@ -84,7 +82,7 @@ const Track = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${theme.palette.gray400};
+  background-color: ${({ theme }) => theme.palette.gray400};
   border-radius: 0.5rem;
 
   z-index: 1;
@@ -97,7 +95,7 @@ const Range = styled.div<{ $left: string; $width: string }>`
   top: 0;
   bottom: 0;
 
-  background-color: ${theme.color.accent.bg.strong};
+  background-color: ${({ theme }) => theme.color.accent.bg.strong};
   border-radius: 0.5rem;
 
   z-index: 2;
@@ -107,8 +105,8 @@ const valueStyles = css`
   position: absolute;
   top: 1rem;
 
-  ${theme.font.body.default}
-  color: ${theme.color.neutral.text.default};
+  ${({ theme }) => theme.font.body.default}
+  color: ${({ theme }) => theme.color.neutral.text.default};
 
   cursor: pointer;
   z-index: 3;
